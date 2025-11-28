@@ -17,7 +17,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onStart }) => {
           <span className="font-bold text-gray-800 text-lg tracking-tight">EvalPrompts</span>
         </div>
         <div className="flex items-center gap-4">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-900 transition-colors">
+          <a href="https://github.com/techczech/Personal-Evals" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-900 transition-colors">
             <Github size={20} />
           </a>
         </div>
@@ -31,8 +31,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onStart }) => {
             Prompts to use to evaluate frontier capabilities of Large Language Models.
           </h1>
           
-          <p className="text-sm md:text-base font-semibold text-primary-600 uppercase tracking-wide mb-8">
-            Personal model exploration suite by Dominik Lukeš. Updated 10 Nov 2025.
+          <p className="text-sm md:text-base font-semibold text-primary-600 tracking-wide mb-8">
+            Personal model exploration suite by <a href="https://dominiklukes.net" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary-800 transition-colors">Dominik Lukeš</a>. Updated 10 Nov 2025.
           </p>
 
           <div className="text-xl text-gray-600 leading-relaxed space-y-4 mb-12 max-w-2xl mx-auto">
@@ -58,8 +58,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onStart }) => {
 
       {/* Footer */}
       <footer className="bg-white border-t border-gray-200 py-8">
-        <div className="max-w-7xl mx-auto px-6 text-center text-sm text-gray-500">
-          © 2025 Prompt Eval Library. Created by Dominik Lukeš.
+        <div className="max-w-7xl mx-auto px-6 text-center text-sm text-gray-500 flex flex-col gap-2">
+          <p>
+             CC BY license. Created by <a href="https://dominiklukes.net" target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 underline transition-colors">Dominik Lukeš</a>.
+          </p>
+          <p>
+            <a href="https://github.com/techczech/Personal-Evals" target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 underline transition-colors">
+              Fork it or suggest update on GitHub
+            </a>
+          </p>
         </div>
       </footer>
     </div>

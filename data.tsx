@@ -3,6 +3,8 @@ import { SectionData } from './types';
 import { CodeBlock } from './components/CodeBlock';
 import { InfoBlock } from './components/InfoBlock';
 import { PlaceholderImage } from './components/PlaceholderImage';
+import { FileAttachment } from './components/FileAttachment';
+import { psmithText } from './psmithData';
 
 export const contentData: SectionData[] = [
   {
@@ -549,9 +551,11 @@ Email: In Chapter XXII, Psmith offers to send Mr. Waring "an email". Email techn
       <>
         <h1 className="text-3xl font-bold text-gray-900 mb-6">Long-Context Information retrieval</h1>
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Finding anachronisms</h2>
-        <div className="bg-gray-100 p-3 rounded mb-4 font-mono text-xs border border-gray-300">
-            [Attachment: PsmithJournalist-test.txt]
-        </div>
+        <FileAttachment 
+          filename="PsmithJournalist-test.txt" 
+          path="samplefiles/PsmithJournalist-test.txt" 
+          content={psmithText}
+        />
         <InfoBlock>
             <p className="font-semibold">Correct answers:</p>
             <ul className="list-disc list-inside space-y-2 mt-2">
@@ -749,8 +753,8 @@ Based on your knowledge of PG Wodehouse's Psmith, Journalist, find answers to al
     title: 'Vision',
     category: 'Vision',
     keywords: 'vision, image analysis, czech joke, concept map',
-    searchContent: `Czech joke [Image: msedge_i05JM9alSu.png]
-Concept map to propositions [Image: fc355446-9b47-4261-a695-29a062d91d52.png]
+    searchContent: `Czech joke [Image: czechjoke.png]
+Concept map to propositions [Image: conceptmap.png]
 Correct answer
 chunking	facilitated by	rehearsal strategies
 attention	affects	information maintenance
@@ -763,16 +767,16 @@ central executive	processes information from	visuospatial sketchpad
 auditory input	processed by	phonological loop
 load	decreases	capacity
 load	decreased by	fewer distractions
-Image without semantic anchors [Image: msedge_kKAm6AHhyi.png]`,
+Image without semantic anchors [Image: noanchors.png]`,
     content: (
       <>
         <h1 className="text-3xl font-bold text-gray-900 mb-6">Vision</h1>
         
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Czech joke</h2>
-        <PlaceholderImage alt="Czech Joke Image" filename="msedge_i05JM9alSu.png" />
+        <PlaceholderImage alt="Czech Joke Image" filename="czechjoke.png" />
         
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Concept map to propositions</h2>
-        <PlaceholderImage alt="Concept Map" filename="fc355446-9b47-4261-a695-29a062d91d52.png" />
+        <PlaceholderImage alt="Concept Map" filename="conceptmap.png" />
         <InfoBlock>
             <p className="font-semibold">Correct answer</p>
             <ul className="list-none space-y-1 font-mono text-sm mt-2">
@@ -791,7 +795,7 @@ Image without semantic anchors [Image: msedge_kKAm6AHhyi.png]`,
         </InfoBlock>
 
         <h2 className="text-2xl font-bold text-gray-800 mb-4 mt-8">Image without semantic anchors</h2>
-        <PlaceholderImage alt="Image without anchors" filename="msedge_kKAm6AHhyi.png" />
+        <PlaceholderImage alt="Image without anchors" filename="noanchors.png" />
       </>
     )
   },
