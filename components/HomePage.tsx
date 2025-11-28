@@ -1,0 +1,67 @@
+import React from 'react';
+import { ArrowRight, Github } from 'lucide-react';
+
+interface HomePageProps {
+  onStart: () => void;
+}
+
+export const HomePage: React.FC<HomePageProps> = ({ onStart }) => {
+  return (
+    <div className="min-h-screen bg-white font-sans text-gray-900 flex flex-col">
+      {/* Navigation */}
+      <nav className="w-full max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-sm">
+            E
+          </div>
+          <span className="font-bold text-gray-800 text-lg tracking-tight">EvalPrompts</span>
+        </div>
+        <div className="flex items-center gap-4">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-900 transition-colors">
+            <Github size={20} />
+          </a>
+        </div>
+      </nav>
+
+      {/* Main Content */}
+      <main className="flex-1 flex flex-col justify-center">
+        <div className="max-w-4xl mx-auto px-6 py-16 text-center animate-in fade-in duration-700">
+          
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-8 leading-tight">
+            Prompts to use to evaluate frontier capabilities of Large Language Models.
+          </h1>
+          
+          <p className="text-sm md:text-base font-semibold text-primary-600 uppercase tracking-wide mb-8">
+            Personal model exploration suite by Dominik Lukeš. Updated 10 Nov 2025.
+          </p>
+
+          <div className="text-xl text-gray-600 leading-relaxed space-y-4 mb-12 max-w-2xl mx-auto">
+            <p>
+              I use a selection of these prompts to evaluate a new model on the limits of performance. Feel free to reuse or modify any of these as needed.
+            </p>
+            <p>
+              Some of these prompts are only useful for testing smaller models because the frontier models always perform well.
+            </p>
+          </div>
+          
+          <div className="flex justify-center">
+            <button 
+              onClick={onStart}
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-600 text-white font-bold rounded-lg hover:bg-primary-700 transition-all shadow-lg hover:shadow-primary-200 transform hover:-translate-y-0.5"
+            >
+              Open Eval Browser
+              <ArrowRight size={20} />
+            </button>
+          </div>
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-white border-t border-gray-200 py-8">
+        <div className="max-w-7xl mx-auto px-6 text-center text-sm text-gray-500">
+          © 2025 Prompt Eval Library. Created by Dominik Lukeš.
+        </div>
+      </footer>
+    </div>
+  );
+};
