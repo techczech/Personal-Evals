@@ -11,9 +11,14 @@ interface FileAttachmentProps {
 export const FileAttachment: React.FC<FileAttachmentProps> = ({ filename, path, content, label = "ATTACHMENT" }) => {
   // Create a Blob URL if content is provided, otherwise use the path
   const fileUrl = useMemo(() => {
-    if (content) {
-      const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
-      return URL.createObjectURL(blob);
+    // If we have direct content, prefer that over the path to avoid 404s
+    if (content && content.length > 0) {
+      try {
+        const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+        return URL.createObjectURL(blob);
+      } catch (e) {
+        console.error("Failed to create blob URL", e);
+      }
     }
     return path || '#';
   }, [content, path]);

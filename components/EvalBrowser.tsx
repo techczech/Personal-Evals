@@ -17,16 +17,31 @@ const groupSections = (sections: SectionData[]) => {
 
 interface EvalBrowserProps {
   onBack: () => void;
+  initialSectionId?: string;
 }
 
-export const EvalBrowser: React.FC<EvalBrowserProps> = ({ onBack }) => {
+export const EvalBrowser: React.FC<EvalBrowserProps> = ({ onBack, initialSectionId }) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [activeSection, setActiveSection] = useState(contentData[0].id);
+  const [activeSection, setActiveSection] = useState(initialSectionId || contentData[0].id);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [filteredData, setFilteredData] = useState(contentData);
 
   // Group data for sidebar
   const groupedSections = groupSections(contentData);
+
+  // Initial scroll if ID is provided
+  useEffect(() => {
+    if (initialSectionId) {
+      setActiveSection(initialSectionId);
+      // Allow render to happen then scroll
+      setTimeout(() => {
+        const element = document.getElementById(initialSectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, [initialSectionId]);
 
   // Filter logic
   useEffect(() => {
@@ -128,14 +143,14 @@ export const EvalBrowser: React.FC<EvalBrowserProps> = ({ onBack }) => {
                       key={section.id}
                       onClick={() => scrollToSection(section.id)}
                       className={`
-                        w-full text-left px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150 flex items-center justify-between group
+                        w-full text-left px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150 flex items-start gap-2 justify-between group
                         ${activeSection === section.id 
                           ? 'bg-primary-50 text-primary-700' 
                           : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'}
                       `}
                     >
-                      <span className="truncate">{section.title}</span>
-                      {activeSection === section.id && <ChevronRight size={14} className="text-primary-500" />}
+                      <span className="truncate flex-1">{section.title}</span>
+                      {activeSection === section.id && <ChevronRight size={14} className="text-primary-500 flex-shrink-0 mt-1" />}
                     </button>
                   ))}
                 </div>

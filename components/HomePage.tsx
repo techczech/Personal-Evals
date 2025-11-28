@@ -1,11 +1,12 @@
 import React from 'react';
-import { ArrowRight, Github } from 'lucide-react';
+import { ArrowRight, Github, Search } from 'lucide-react';
 
 interface HomePageProps {
-  onStart: () => void;
+  onStart: (id?: string) => void;
+  onOpenSearch: () => void;
 }
 
-export const HomePage: React.FC<HomePageProps> = ({ onStart }) => {
+export const HomePage: React.FC<HomePageProps> = ({ onStart, onOpenSearch }) => {
   return (
     <div className="min-h-screen bg-white font-sans text-gray-900 flex flex-col">
       {/* Navigation */}
@@ -28,7 +29,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onStart }) => {
         <div className="max-w-4xl mx-auto px-6 py-16 text-center animate-in fade-in duration-700">
           
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-8 leading-tight">
-            Prompts to use to evaluate frontier capabilities of Large Language Models.
+            <span className="text-primary-500">Prompts</span> to use to evaluate frontier capabilities of <span className="text-primary-700">Large Language Models</span>.
           </h1>
           
           <p className="text-sm md:text-base font-semibold text-primary-600 tracking-wide mb-8">
@@ -44,13 +45,20 @@ export const HomePage: React.FC<HomePageProps> = ({ onStart }) => {
             </p>
           </div>
           
-          <div className="flex justify-center">
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button 
-              onClick={onStart}
+              onClick={() => onStart()}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-600 text-white font-bold rounded-lg hover:bg-primary-700 transition-all shadow-lg hover:shadow-primary-200 transform hover:-translate-y-0.5"
             >
-              Open Eval Browser
+              Browse Evals
               <ArrowRight size={20} />
+            </button>
+            <button 
+              onClick={onOpenSearch}
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-gray-700 border-2 border-gray-100 font-bold rounded-lg hover:border-primary-200 hover:text-primary-600 transition-all shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
+            >
+              <Search size={20} />
+              Search <span className="ml-2 text-xs font-mono text-gray-400 border border-gray-200 rounded px-1.5 py-0.5">/</span>
             </button>
           </div>
         </div>

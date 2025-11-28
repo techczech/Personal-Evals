@@ -767,7 +767,7 @@ central executive	processes information from	visuospatial sketchpad
 auditory input	processed by	phonological loop
 load	decreases	capacity
 load	decreased by	fewer distractions
-Image without semantic anchors [Image: noanchors.png]`,
+Image without semantic anchors [Image: imagewithoutanchors.png]`,
     content: (
       <>
         <h1 className="text-3xl font-bold text-gray-900 mb-6">Vision</h1>
@@ -795,7 +795,7 @@ Image without semantic anchors [Image: noanchors.png]`,
         </InfoBlock>
 
         <h2 className="text-2xl font-bold text-gray-800 mb-4 mt-8">Image without semantic anchors</h2>
-        <PlaceholderImage alt="Image without anchors" filename="noanchors.png" />
+        <PlaceholderImage alt="Image without anchors" filename="imagewithoutanchors.png" />
       </>
     )
   },
