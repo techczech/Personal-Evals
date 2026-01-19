@@ -12,7 +12,7 @@ export const contentData: SectionData[] = [
     title: 'Personal Evals',
     category: 'Introduction',
     keywords: 'introduction, dominik lukes, evaluation',
-    searchContent: "Prompts to use to evaluate frontier capabilities of Large Language Models. I use a selection of these prompts to evaluate a new model on the limits of performance. Some of these prompts are only useful for testing smaller models because the frontier models always perform well. By Dominik Lukeš.",
+    searchContent: "Prompts to evaluate frontier capabilities of Large Language Models. I use a selection of these prompts to evaluate a new model on the limits of performance. Some of these prompts are only useful for testing smaller models because the frontier models always perform well. By Dominik Lukeš.",
     content: (
       <>
         <h1 className="text-4xl font-extrabold text-gray-900 mb-6 tracking-tight">
@@ -515,7 +515,9 @@ Make a three panel cartoon. In the first panel a robot is coming to the office t
 Less ambiguous version of the above:
 Make a three panel cartoon. In the first panel a cute and friendly robot is coming to the office. There is a sign with Alan Turing on the door. In the second panel, the robot is facing Alan Turing inside his offiece and the robot is saying "I'm here to take your test." In the third panel, Alan Turing stares in surprise and says "I was not expecting you until 2000."
 Videos
-An cute and friendly robot is walking thorugh an Oxford library picking books from the shelves at random and throwing them in the air.`,
+An cute and friendly robot is walking thorugh an Oxford library picking books from the shelves at random and throwing them in the air.
+Make an humorous but educational image of a venn diagram explaining the origin and current use of Venn Diagrams. Think hard but do not do any research.
+Research the history of the perceptron and make an illustrated timeline with key milestones and figures.`,
     content: (
       <>
         <h1 className="text-3xl font-bold text-gray-900 mb-6">Image/video generation testing</h1>
@@ -533,6 +535,10 @@ An cute and friendly robot is walking thorugh an Oxford library picking books fr
 
         <h2 className="text-2xl font-bold text-gray-800 mb-4 mt-8">Videos</h2>
         <CodeBlock code={`An cute and friendly robot is walking thorugh an Oxford library picking books from the shelves at random and throwing them in the air.`} />
+
+        <h2 className="text-2xl font-bold text-gray-800 mb-4 mt-8">Advanced Reasoning Image Generation</h2>
+        <CodeBlock code={`Make an humorous but educational image of a venn diagram explaining the origin and current use of Venn Diagrams. Think hard but do not do any research.`} />
+        <CodeBlock code={`Research the history of the perceptron and make an illustrated timeline with key milestones and figures.`} />
       </>
     )
   },
