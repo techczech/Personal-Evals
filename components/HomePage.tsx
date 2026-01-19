@@ -29,7 +29,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onStart, onOpenSearch }) => 
         <div className="max-w-4xl mx-auto px-6 py-16 text-center animate-in fade-in duration-700">
           
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-8 leading-tight">
-            <span className="text-primary-500">Prompts</span> to use to evaluate frontier capabilities of <span className="text-primary-700">Large Language Models</span>.
+            <span className="text-primary-500">Prompts</span> to evaluate frontier capabilities of <span className="text-primary-700">Large Language Models</span>.
           </h1>
           
           <p className="text-sm md:text-base font-semibold text-primary-600 tracking-wide mb-8">
